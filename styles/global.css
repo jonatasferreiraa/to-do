@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #6c63ff;
+  --white: #f7f7f7;
+  --black: #252525;
+  --purple-placeholder: #c3c1e5;
+
+  --ff-kanit: "Kanit", sans-serif;
+  --ff-inter: "Inter", sans-serif;
+
+  --title-h1: 500 1.625rem var(--ff-kanit);
+  --select-text: 500 1.125rem var(--ff-kanit);
+  --label-text: 500 1.25rem var(--ff-kanit);
+  --option-text: 400 1rem var(--ff-kanit);
+  --search-text: 500 1rem var(--ff-inter);
+}
+
+h1 {
+  font: var(--title-h1);
+  color: var(--black);
+}
+
+input::placeholder {
+  font: var(--search-text);
+  color: var(--purple-placeholder);
+}
+
+.divisor {
+  background-color: var(--purple);
+  height: 1px;
+}
+
+input,
+select {
+  all: unset;
+}
