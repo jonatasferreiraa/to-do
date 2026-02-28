@@ -36,8 +36,3 @@ input::placeholder {
   background-color: var(--purple);
   height: 1px;
 }
-
-input,
-select {
-  all: unset;
-}

@@ -15,25 +15,61 @@
 
     <title>to do List</title>
   </head>
-  <body class="light-mode">
+  <body class="container light-mode">
     <header>
       <nav>
         <h1>Todo List</h1>
       </nav>
 
-      <div class="input-wrapper">
-        <input
-          type="search"
-          id="seach"
-          name="seach"
-          placeholder="Nota de pesquisa..."
-        />
+      <div class="dashboard">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="seach"
+            name="seach-note"
+            placeholder="Nota de pesquisa..."
+          />
+        </div>
 
-        <select name="note-filter" id="note-filter">
-          <option value="all">Todos</option>
-          <option value="complete">Completo</option>
-          <option value="incomplete">Incompleto</option>
-        </select>
+        <div class="select">
+          <div id="filter-select">
+            <input type="checkbox" id="input-view-btn" />
+
+            <div id="select-btn">
+              <div id="selected-value">ALL</div>
+
+              <span id="chevrons">
+                <img src="/assets/chevron-down.svg" alt="" />
+                <img src="/assets/chevron-up.svg" alt="" />
+              </span>
+            </div>
+          </div>
+
+          <ul id="options">
+            <li class="option">
+              <input type="radio" name="filter" value="all" data-label="All" />
+              <span class="label">All</span>
+            </li>
+            <li class="option">
+              <input
+                type="radio"
+                name="filter"
+                value="complete"
+                data-label="Complete"
+              />
+              <span class="label">Complete</span>
+            </li>
+            <li class="option">
+              <input
+                type="radio"
+                name="filter"
+                value="incomplete"
+                data-label="Incomplete"
+              />
+              <span class="label">Incomplete</span>
+            </li>
+          </ul>
+        </div>
 
         <div class="scheme-mode">
           <input type="checkbox" name="scheme" id="scheme" />
@@ -43,18 +79,20 @@
     </header>
 
     <main>
-      <div class="note-content">
-        <div class="note">
-          <input type="checkbox" name="checked" id="checked" />
-          <label for="checked">NOTA #1</label>
-          <span class="icons-note">
-            <img src="/assets/pencil.svg" alt="" />
-            <img src="/assets/tash.svg" alt="" />
-          </span>
-        </div>
+      <section class="note-container">
+        <div class="note-content">
+          <div class="note">
+            <input type="checkbox" name="checked" id="checked" />
+            <label for="checked">NOTA #1</label>
+            <span class="icons-note">
+              <img src="/assets/pencil.svg" alt="" />
+              <img src="/assets/tash.svg" alt="" />
+            </span>
+          </div>
 
-        <div class="divisor"></div>
-      </div>
+          <div class="divisor"></div>
+        </div>
+      </section>
     </main>
 
     <footer>

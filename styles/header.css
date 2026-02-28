@@ -1,0 +1,160 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 18px;
+}
+
+nav {
+  margin-top: 40px;
+
+  & h1 {
+    text-transform: uppercase;
+  }
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  position: relative;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+
+  & input {
+    all: unset;
+  }
+
+  & #seach {
+    width: 595px;
+
+    border: 1px solid var(--purple);
+    padding: 8px 16px;
+    border-radius: 5px;
+
+    font: var(--search-text);
+    color: var(--purple);
+  }
+
+  &::before {
+    content: "";
+    background: url(/assets/icon-search.svg) no-repeat;
+    position: absolute;
+
+    width: 21px;
+    height: 21px;
+    right: 1rem;
+
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+#select-btn {
+  display: flex;
+  width: 93px;
+  height: 38px;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+
+  background-color: var(--purple);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#selected-value {
+  color: var(--white);
+  font: var(--select-text);
+}
+
+#chevrons img[src="/assets/chevron-up.svg"] {
+  display: none;
+}
+
+#input-view-btn:focus + #select-btn,
+#input-view-btn:checked + #select-btn {
+  outline: 2px solid var(--purple);
+  filter: drop-shadow(0 0 4px var(--purple));
+}
+
+#filter-select:has(#input-view-btn:checked),
+#input-view-btn:checked + #select-btn {
+  background-color: #534cc2;
+}
+
+#input-view-btn:checked
+  + #select-btn
+  #chevrons
+  img[src="/assets/chevron-down.svg"] {
+  display: none;
+}
+
+#input-view-btn:checked
+  + #select-btn
+  #chevrons
+  img[src="/assets/chevron-up.svg"] {
+  display: block;
+}
+
+#filter-select {
+  position: relative;
+}
+
+#input-view-btn {
+  all: unset;
+  inset: 0;
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+}
+
+#options {
+  border-radius: 5px;
+  border: 1px solid var(--purple);
+  background: var(--white);
+  position: absolute;
+
+  display: none;
+}
+
+.option {
+  display: flex;
+  gap: 0.5rem;
+  padding: 8.4px 6px;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.option .label {
+  color: var(--purple);
+  font: var(--option-text);
+}
+
+.option:has(input:checked),
+.option:hover {
+  background-color: rgba(108, 99, 255, 0.2);
+}
+
+.option:has(input:focus) {
+  outline: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 5px;
+}
+
+.option input[type="radio"] {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+#filter-select:has(#input-view-btn:checked) + #options {
+  display: block;
+}
