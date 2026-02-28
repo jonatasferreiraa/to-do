@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to do List</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Todo List</h1>
+      </nav>
+
+      <div class="input-wrapper">
+        <input
+          type="search"
+          id="seach"
+          name="seach"
+          placeholder="Nota de pesquisa..."
+        />
+
+        <select name="" id="">
+          <option value="all">Todos</option>
+          <option value="complete">Completo</option>
+          <option value="incomplete">Incompleto</option>
+        </select>
+
+        <div class="scheme-mode">
+          <input type="checkbox" name="scheme" id="scheme" />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="note-content">
+        <div class="note">
+          <input type="checkbox" name="checked" id="checked" />
+          <label for="checked">NOTA #1</label>
+          <span class="icons-note">
+            <img src="/assets/pencil.svg" alt="" />
+            <img src="/assets/tash.svg" alt="" />
+          </span>
+        </div>
+        <div class="divisor"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="add-note">
+        <img src="/assets/plus.svg" alt="ícone de adicionar nota" />
+      </div>
+    </footer>
+  </body>
+</html>
