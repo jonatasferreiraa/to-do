@@ -158,3 +158,42 @@ nav {
 #filter-select:has(#input-view-btn:checked) + #options {
   display: block;
 }
+
+.scheme-mode {
+  background-color: var(--purple);
+  border-radius: 5px;
+  position: relative;
+  padding: 8px;
+  height: 38px;
+  width: 38px;
+}
+
+.scheme-mode input[type="checkbox"] {
+  all: unset;
+  inset: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.scheme-mode input[type="checkbox"]:checked {
+  background-color: var(--purple-dark);
+  border-radius: 5px;
+  padding: 8px;
+  background: url(/assets/sun.svg) no-repeat center center;
+}
+
+.scheme-mode input[type="checkbox"]:checked + img {
+  display: none;
+}
+
+.scheme-mode input[type="checkbox"]:not(:checked) {
+  background: url(/assets/moon.svg) no-repeat center center;
+}
+
+.scheme-mode input[type="checkbox"]:focus-within {
+  background-color: var(--purple-dark);
+  border-radius: 5px;
+  padding: 8px;
+  outline: 2px solid var(--purple);
+  filter: drop-shadow(0 0 4px var(--purple));
+}
