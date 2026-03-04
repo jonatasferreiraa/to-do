@@ -32,8 +32,3 @@ input::placeholder {
   font: var(--search-text);
   color: var(--purple-placeholder);
 }
-
-.divisor {
-  background-color: var(--purple);
-  height: 1px;
-}

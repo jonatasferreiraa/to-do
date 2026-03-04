@@ -1,0 +1,96 @@
+.note-content {
+  margin-bottom: 30px;
+}
+
+.note {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+label {
+  width: 100%;
+  font: var(--label-text);
+  text-align: left;
+}
+
+#checked {
+  inset: 0;
+  all: unset;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  cursor: pointer;
+}
+
+.checkbox {
+  background-image: url(/assets/checkbox-stroke.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 26px;
+}
+
+#checked:checked + .checkbox {
+  background-image: url(/assets/checkbox.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 26px;
+}
+
+.icons-note {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.icon-pencil {
+  background: url(/assets/pencil.svg) no-repeat center/contain;
+
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+  z-index: 1;
+}
+
+.icon-pencil:hover {
+  background: url(/assets/pencil-hover.svg) no-repeat center/contain;
+
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+  z-index: 1;
+}
+
+.icon-trash {
+  background: url(/assets/trash.svg) no-repeat center/contain;
+
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+  z-index: 1;
+}
+
+.icon-trash:hover {
+  background: url(/assets/trash-hover.svg) no-repeat center/contain;
+
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+  z-index: 1;
+}
+
+.divisor {
+  background-color: var(--purple);
+  width: 100%;
+  height: 1px;
+}
