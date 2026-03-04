@@ -1,0 +1,104 @@
+dialog {
+  all: unset;
+}
+
+#content-pop {
+  width: 500px;
+  height: 289px;
+  margin-inline: auto;
+  border-radius: 1rem;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+#new-note-form label {
+  font: var(--label-text);
+  text-transform: uppercase;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+#new-note-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#new-note-form > input {
+  width: 100%;
+  height: 38px;
+  padding: 16px;
+  border: 1px solid var(--purple);
+  border-radius: 5px;
+  color: var(--purple);
+  font: var(--search-text);
+}
+
+#new-note-form > input:focus-within {
+  outline: 2px solid rgba(108, 99, 255, 0.4);
+}
+
+#btn-popup {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#btn-popup > button {
+  all: unset;
+}
+
+#btn-popup > button[type="submit"],
+#btn-popup > button[type="button"] {
+  font: var(--select-text);
+  text-transform: uppercase;
+  padding: 10px 22px;
+}
+
+#btn-popup > button[type="submit"] {
+  color: var(--white);
+  background-color: var(--purple);
+
+  border-radius: 5px;
+}
+
+#btn-popup > button[type="button"] {
+  color: var(--purple);
+  background-color: var(--white);
+  border: 1px solid var(--purple);
+  border-radius: 5px;
+}
+
+#btn-popup > button[type="submit"]:hover {
+  color: var(--white);
+  background-color: var(--purple-dark);
+  border-radius: 5px;
+  outline: 2px solid rgba(108, 99, 255, 0.4);
+}
+
+#btn-popup > button[type="button"]:hover {
+  outline: 2px solid rgba(108, 99, 255, 0.4);
+}
+
+@media (width <= 1000px) {
+  #content-pop {
+    width: 100%;
+  }
+
+  #btn-popup {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #btn-popup > button {
+    width: 100%;
+    text-align: center;
+  }
+}

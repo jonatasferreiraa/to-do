@@ -16,10 +16,14 @@ nav {
 .dashboard {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
   gap: 16px;
 
   position: relative;
+}
+
+form {
+  width: 100%;
 }
 
 .input-wrapper {
@@ -27,17 +31,16 @@ nav {
   align-items: center;
   gap: 1rem;
   position: relative;
-  min-width: 595px;
 
   & > input {
     all: unset;
   }
 
   & #seach {
-    width: 100%;
     border: 1px solid var(--purple);
     padding: 8px 16px;
     border-radius: 5px;
+    width: 100%;
 
     font: var(--search-text);
     color: var(--purple);
@@ -119,9 +122,10 @@ nav {
 #options {
   border-radius: 5px;
   border: 1px solid var(--purple);
-  background: var(--white);
-  position: absolute;
+  background-color: white;
 
+  position: absolute;
+  z-index: 2;
   display: none;
 }
 
@@ -131,7 +135,7 @@ nav {
   padding: 8.4px 6px;
 
   position: relative;
-  z-index: 2;
+
   cursor: pointer;
 }
 
@@ -203,5 +207,9 @@ nav {
 @media (width <= 1000px) {
   .input-wrapper {
     min-width: 100%;
+  }
+
+  .dashboard {
+    flex-wrap: wrap;
   }
 }

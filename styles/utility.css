@@ -5,3 +5,7 @@
 .light-mode {
   background-color: var(--white);
 }
+
+.invisible {
+  display: none;
+}

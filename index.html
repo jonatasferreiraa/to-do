@@ -22,15 +22,17 @@
       </nav>
 
       <div class="dashboard">
-        <div class="input-wrapper">
-          <input
-            type="text"
-            id="seach"
-            name="seach-note"
-            placeholder="Nota de pesquisa..."
-          />
-          <button type="submit"></button>
-        </div>
+        <form action="">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="seach"
+              name="seach-note"
+              placeholder="Nota de pesquisa..."
+            />
+            <button type="submit"></button>
+          </div>
+        </form>
 
         <div class="select">
           <div id="filter-select">
@@ -99,9 +101,28 @@
     </main>
 
     <footer>
-      <div class="add-note">
+      <button type="button" id="add-note">
         <img src="/assets/plus.svg" alt="ícone de adicionar nota" />
-      </div>
+      </button>
     </footer>
+
+    <dialog>
+      <div id="content-pop">
+        <form action="" id="new-note-form">
+          <label for="new-note">New note</label>
+          <input
+            type="text"
+            name="new-note"
+            id="new-note"
+            placeholder="Input your note..."
+          />
+        </form>
+
+        <span id="btn-popup">
+          <button type="button">Cancel</button>
+          <button type="submit" form="new-note-form">Apply</button>
+        </span>
+      </div>
+    </dialog>
   </body>
 </html>
