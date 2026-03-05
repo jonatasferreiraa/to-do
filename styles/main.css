@@ -111,7 +111,7 @@ label {
   bottom: 30px;
 
   animation:
-    messageApper 800ms ease forwards,
+    messageApper 400ms ease forwards,
     messageClose 400ms ease 2s forwards;
 }
 
@@ -213,7 +213,11 @@ label {
 }
 
 @keyframes messageClose {
+  from {
+    opacity: 1;
+  }
   to {
+    opacity: 0;
     display: none;
   }
 }

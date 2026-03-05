@@ -118,6 +118,11 @@ function addTask() {
     removeTask("Tarefa removida com sucesso!");
   };
 
+  // mensagem de sucesso ao editar;
+  const editSucess = (editTask) => {
+    editTask("Tarefa editada com sucesso!");
+  };
+
   //Captura o clique no checkbox, e verifica se a tarefa for concluida então ele adiciona a taxação na tarefa, se não, ele remove.
   checkboxInput.onclick = () => {
     if (checkboxInput.checked) {
@@ -166,11 +171,6 @@ function addTask() {
     note.replaceChild(editContainer, ValueNote);
     editInput.focus();
     editInput.select();
-
-    // mensagem de sucesso ao editar;
-    const editSucess = (editTask) => {
-      editTask("Tarefa editada com sucesso!");
-    };
 
     // função para finalizar edição
     const finishEdit = () => {
