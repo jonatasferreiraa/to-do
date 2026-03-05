@@ -24,6 +24,10 @@
   --edit-text: 500 0.875rem var(--ff-kanit);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   font: var(--title-h1);
   color: var(--black);
