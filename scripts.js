@@ -108,9 +108,14 @@ function addTask() {
 
   noteContainer.append(contentNote);
 
-  // Callback: mensagem de tarefa concluída;
+  // mensagem de tarefa concluída;
   const sucessMessage = (taskComplete) => {
     taskComplete("Tarefa Concluída com sucesso!");
+  };
+
+  // mensagem de remoção de tarefa;
+  const removeMessage = (removeTask) => {
+    removeTask("Tarefa removida com sucesso!");
   };
 
   //Captura o clique no checkbox, e verifica se a tarefa for concluida então ele adiciona a taxação na tarefa, se não, ele remove.
@@ -140,6 +145,25 @@ function addTask() {
       ValueNote.textContent = inputnewNote.value;
       ValueNote.style.textDecoration = "none";
     }
+  };
+
+  iconTrash.onclick = () => {
+    contentNote.remove();
+
+    removeMessage((remove) => {
+      const MessageContainer = document.createElement("div");
+      MessageContainer.classList.add("sucess-message");
+      MessageContainer.style.backgroundColor = "rgba(108, 99, 255, 0.2)";
+      MessageContainer.style.color = "#6C63FF";
+      const imgCheck = document.createElement("img");
+      imgCheck.src = "/assets/trash-purple.svg";
+      const MessageText = document.createElement("p");
+      MessageText.textContent = remove;
+
+      noteContainer.append(MessageContainer);
+      MessageContainer.appendChild(imgCheck);
+      MessageContainer.appendChild(MessageText);
+    });
   };
 }
 

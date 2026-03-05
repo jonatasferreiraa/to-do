@@ -5,7 +5,7 @@ body {
 body .background-popup {
   background-color: rgba(37, 37, 37, 0.7);
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
