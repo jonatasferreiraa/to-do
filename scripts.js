@@ -41,6 +41,8 @@ function closePopUp() {
   removePopup.onclick = () => {
     popup.classList.remove("visible");
     popup.classList.add("invisible");
+    backgroundPopup.classList.remove("visible");
+    backgroundPopup.classList.add("invisible");
   };
 }
 
