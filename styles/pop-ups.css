@@ -1,5 +1,27 @@
+body {
+  position: relative;
+}
+
+body .background-popup {
+  background-color: rgba(37, 37, 37, 0.7);
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 9;
+}
+
 dialog {
   all: unset;
+  position: absolute;
+  z-index: 11;
+  width: 100%;
+
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 #content-pop {

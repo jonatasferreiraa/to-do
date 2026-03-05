@@ -2,6 +2,7 @@ footer {
   position: fixed;
   right: 333px;
   bottom: 32px;
+  z-index: 10;
 }
 
 #add-note {

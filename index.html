@@ -83,9 +83,13 @@
 
     <main>
       <section class="note-container">
-        <div class="note-content">
+        <!-- <div class="sucess-message">
+          <img src="/assets/checkbox.svg" alt="" />
+          <p>Tarefa concluída com sucesso!</p>
+        </div> -->
+        <!-- <div class="note-content">
           <div class="note">
-            <input type="checkbox" name="checked" id="checked" />
+            <input type="checkbox" name="checked-task" id="checked" />
             <div class="checkbox"></div>
             <label for="checked">NOTA #1</label>
 
@@ -96,7 +100,7 @@
           </div>
 
           <div class="divisor"></div>
-        </div>
+        </div> -->
       </section>
     </main>
 
@@ -119,11 +123,15 @@
         </form>
 
         <span id="btn-popup">
-          <button type="button">Cancel</button>
-          <button type="submit" form="new-note-form">Apply</button>
+          <button type="button" id="close-popup">Cancel</button>
+          <button type="submit" id="add-task" form="new-note-form">
+            Apply
+          </button>
         </span>
       </div>
     </dialog>
+
+    <div class="background-popup invisible"></div>
 
     <script src="/scripts.js"></script>
   </body>
