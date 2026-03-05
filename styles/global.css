@@ -21,6 +21,7 @@
   --label-text: 500 1.25rem var(--ff-kanit);
   --option-text: 400 1rem var(--ff-kanit);
   --search-text: 500 1rem var(--ff-inter);
+  --edit-text: 500 0.875rem var(--ff-kanit);
 }
 
 h1 {

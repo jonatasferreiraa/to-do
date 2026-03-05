@@ -134,6 +134,41 @@ label {
     messageApper 800ms ease forwards,
     messageClose 400ms ease 2s forwards;
 }
+
+.edit-container {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-70%);
+  border-radius: 5px;
+  z-index: 8;
+
+  width: fit-content;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+
+  background-color: #f0f0f0;
+  border-radius: 5px;
+
+  & .edit-label {
+    all: unset;
+
+    font: var(--label-text);
+    text-transform: uppercase;
+    color: var(--purple);
+  }
+
+  & > span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font: var(--edit-text);
+    text-transform: uppercase;
+    color: #cdcdcd;
+  }
+}
 @media (width <= 460px) {
   .sucess-message {
     bottom: 120px;
@@ -143,6 +178,27 @@ label {
   .error-message {
     bottom: 120px;
     font: var(--option-text);
+  }
+}
+
+@media (width <= 1000px) {
+  .edit-container {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-70%);
+    border-radius: 5px;
+    z-index: 8;
+
+    width: 60%;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+
+    & .edit-label {
+      width: 100%;
+      font: 0.5rem;
+    }
   }
 }
 

@@ -121,12 +121,12 @@ function addTask() {
   //Captura o clique no checkbox, e verifica se a tarefa for concluida então ele adiciona a taxação na tarefa, se não, ele remove.
   checkboxInput.onclick = () => {
     if (checkboxInput.checked) {
-      ValueNote.textContent = inputnewNote.value;
       ValueNote.style.textDecoration = "line-through";
       ValueNote.style.textDecorationColor = "rgba(37, 37, 37, 0.5)";
 
       ValueNote.style.color = "rgba(37, 37, 37, 0.5)";
 
+      // mensagem de sucesso em tarefa;
       sucessMessage((message) => {
         const MessageContainer = document.createElement("div");
         MessageContainer.classList.add("sucess-message");
@@ -139,12 +139,71 @@ function addTask() {
         MessageContainer.appendChild(imgCheck);
         MessageContainer.appendChild(MessageText);
       });
-
-      //chamada de callback para mensagem de sucesso em tarefa!
     } else {
-      ValueNote.textContent = inputnewNote.value;
       ValueNote.style.textDecoration = "none";
+      ValueNote.style.color = "";
     }
+  };
+
+  iconPencil.onclick = () => {
+    // criando o container de edição
+    const editContainer = document.createElement("div");
+    editContainer.classList.add("edit-container");
+    const editInput = document.createElement("input");
+    editInput.type = "text";
+    editInput.value = ValueNote.textContent;
+
+    editInput.classList.add("edit-label");
+    const imgEnter = document.createElement("img");
+    imgEnter.src = "/assets/pencil-hover.svg";
+
+    editContainer.appendChild(editInput);
+    editContainer.appendChild(imgEnter);
+
+    note.append(editContainer);
+
+    // troca o label pelo input
+    note.replaceChild(editContainer, ValueNote);
+    editInput.focus();
+    editInput.select();
+
+    // mensagem de sucesso ao editar;
+    const editSucess = (editTask) => {
+      editTask("Tarefa editada com sucesso!");
+    };
+
+    // função para finalizar edição
+    const finishEdit = () => {
+      const newText = editInput.value.trim();
+      if (newText !== "") {
+        ValueNote.textContent = newText;
+
+        // exibindo a mensagem de sucesso ai editar tarefa!
+        editSucess((message) => {
+          const MessageContainer = document.createElement("div");
+          MessageContainer.classList.add("sucess-message");
+          const imgCheck = document.createElement("img");
+          imgCheck.src = "/assets/checkbox.svg";
+          const MessageText = document.createElement("p");
+          MessageText.textContent = message;
+
+          noteContainer.append(MessageContainer);
+          MessageContainer.appendChild(imgCheck);
+          MessageContainer.appendChild(MessageText);
+        });
+      }
+      note.replaceChild(ValueNote, editContainer); // volta o label pro lugar
+    };
+
+    // salva ao sair do foco
+    editInput.addEventListener("blur", finishEdit);
+
+    // salva ao apertar Enter
+    editInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        finishEdit();
+      }
+    });
   };
 
   iconTrash.onclick = () => {
