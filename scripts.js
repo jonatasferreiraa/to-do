@@ -48,7 +48,28 @@ function closePopUp() {
 
 function applyTask() {
   taskAdd.onclick = () => {
-    addTask();
+    const validadeAddTask = (erroValue) => {
+      erroValue("Preencha o campo para adicionar uma tarefa!");
+    };
+
+    if (!inputnewNote.value) {
+      validadeAddTask((erroMessage) => {
+        const MessageError = document.createElement("div");
+        MessageError.classList.add("error-message");
+        const imgErro = document.createElement("img");
+        imgErro.src = "/assets/error-icon.svg";
+        const ErroText = document.createElement("p");
+        ErroText.textContent = erroMessage;
+
+        noteContainer.append(MessageError);
+        MessageError.appendChild(imgErro);
+        MessageError.appendChild(ErroText);
+      });
+      return false;
+    } else {
+      addTask();
+      return true;
+    }
   };
 }
 
@@ -87,6 +108,11 @@ function addTask() {
 
   noteContainer.append(contentNote);
 
+  // Callback: mensagem de tarefa concluída;
+  const sucessMessage = (taskComplete) => {
+    taskComplete("Tarefa Concluída com sucesso!");
+  };
+
   //Captura o clique no checkbox, e verifica se a tarefa for concluida então ele adiciona a taxação na tarefa, se não, ele remove.
   checkboxInput.onclick = () => {
     if (checkboxInput.checked) {
@@ -116,12 +142,6 @@ function addTask() {
     }
   };
 }
-
-// Callback: mensagens de erros e validações;
-const sucessMessage = (taskComplete, validate) => {
-  taskComplete("Tarefa Concluída com sucesso!");
-  validate("Não foi possível adicionar a tarefa!");
-};
 
 //chamada de função de adicionar e remover pop-up da tela
 openPopUp();

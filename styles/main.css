@@ -115,8 +115,32 @@ label {
     messageClose 400ms ease 2s forwards;
 }
 
+.error-message {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font: var(--label-text);
+  color: white;
+  background-color: #d31f1f;
+  padding: 10px 12px;
+  border-radius: 5px;
+
+  position: fixed;
+  bottom: 30px;
+  z-index: 10;
+
+  animation:
+    messageApper 800ms ease forwards,
+    messageClose 400ms ease 2s forwards;
+}
 @media (width <= 460px) {
   .sucess-message {
+    bottom: 120px;
+    font: var(--option-text);
+  }
+
+  .error-message {
     bottom: 120px;
     font: var(--option-text);
   }
